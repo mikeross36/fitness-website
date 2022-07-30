@@ -1,0 +1,75 @@
+@use "../mixins";
+@use "../variables" as *;
+
+.features {
+
+    &__container {
+        @include mixins.grid(26rem);
+        justify-items: center;
+        gap: 0;
+
+        @media screen and (min-width: 991px){
+            box-shadow: $shadowOne;
+        }
+        
+        &:hover .features__box-img {
+            transform: scale(1.1);
+        }
+
+        .features__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1rem;
+
+            &-image {
+                height: 28rem;
+                overflow: hidden;
+
+                .features__box-img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .features__box-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                text-align: center;
+
+                .box__icon {
+                    height: 7rem;
+                    margin-bottom: 1rem;
+                }
+
+                .box__title {
+                    font-size: 2rem;
+                    color: $red;
+                    text-transform: uppercase;
+                }
+
+                .box__description {
+                    line-height: 150%;
+                    font-size: 1.5rem;
+                    color: $light-white;
+                    padding: 1rem 0;
+
+                    @media screen and (max-width: 768px) {
+                        width: 70%;
+                    }
+                }
+            }
+        }
+
+        .reverse {
+            display: flex;
+            flex-flow: column-reverse;
+
+            @media screen and (max-width: 768px){
+                flex-flow: column;
+            }
+        }
+    }
+}

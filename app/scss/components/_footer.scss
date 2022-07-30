@@ -1,0 +1,80 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.footer {
+    
+    &__container {
+        @include mixins.grid(25rem);
+        justify-items: start;
+        border-top: 1px solid $light-white;
+        padding-top: 2rem;
+
+        .footer__box {
+            text-transform: capitalize;
+
+            & h3 {
+                font-size: 2rem;
+                color: $black;
+                padding: 1rem 0;
+            }
+
+            & a {
+                display: block;
+                color: $black;
+                font-weight: 700;
+            }
+        }
+
+        .footer__link,
+        .hours__link,
+        .info__link,
+        .share__box {
+            font-size: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .footer__link {
+            display: block;
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        .hours__link,
+        .info__link,
+        .share__box {
+            display: flex;
+            column-gap: 1.5rem;
+        }
+
+        .share__box {
+            column-gap: 3rem;
+            line-height: 200%;
+
+            & img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        .subscribe__description {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .email__input {
+            margin-bottom: 1rem;
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid $light-white;
+        }
+    }
+}
+
+.copy__rights {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+    line-height: 150%;
+}

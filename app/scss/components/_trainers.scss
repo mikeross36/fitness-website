@@ -1,0 +1,68 @@
+@use "../mixins";
+@use "../variables" as *;
+
+.trainers {
+
+    &__container {
+        @include mixins.grid(23rem);
+        column-gap: 2rem;
+
+        .trainers__info {
+            max-height: 35rem;
+            overflow: hidden;
+            position: relative;
+            border-radius: .5rem;
+            box-shadow: $shadowOne;
+
+            &:hover {
+                .trainers__info-content {
+                    transform: translateY(0);
+                }
+            }
+
+            .trainers__img {
+                height: fit-content;
+                width: 100%;
+                object-fit: cover;
+                top: 0;
+            }
+
+            .trainers__info-content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $white;
+                color: $black;
+                padding: 2rem;
+                transform: translateY(6.5rem);
+                text-transform: capitalize;
+
+                @media screen and (max-width: 768px){
+                    transform: translateY(6.7rem);
+                }
+
+                & span {
+                    font-size: 1.5rem;
+                }
+
+                .trainers__name {
+                    font-size: 2rem;
+                    padding-top: .5rem;
+                }
+
+                .trainers__socials {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 2rem;
+                    padding-top: 2rem;
+                    margin-top: 1.5rem;
+                    border-top: .1rem solid $red;
+                }
+            }
+        }
+
+        
+    }
+    
+}

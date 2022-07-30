@@ -1,0 +1,111 @@
+@use "../variables" as *;
+
+.home {
+    padding: 0;
+    margin-top: 5rem;
+    height: 100%;
+
+    .slider__wrapper {
+        position: relative;
+
+        .home__slide {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 70vh;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            transition: .3s;
+            display: none;
+            z-index: -1;
+
+            &.active-slide {
+                display: flex;
+            }
+
+            & > * {
+                animation: slideScale .2s linear .2s backwards;
+            }
+    
+            @media screen and (max-width: 991px) {
+                padding: 2rem 5%;
+            }
+    
+            .slide__content {
+                width: 60rem;
+    
+                @media screen and (max-width: 991px) {
+                    width: 45rem;
+                }
+    
+                .slide__text {
+                    font-size: 2rem;
+                    color: $white;
+                    text-shadow: $textSh;
+                    text-transform: uppercase;
+                    display: block;
+                }
+    
+                .slide__title {
+                    font-size: 5rem;
+                    color: $white;
+                    padding: 1rem 0;
+                    text-shadow: $textSh;
+    
+                    @media screen and (max-width: 991px) {
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+
+        .slide1 {
+            background: url(/app/images/home-bg-1.jpg)top center/cover no-repeat;
+        }
+        .slide2 {
+            background: url(/app/images/home-bg-2.jpg) right center/cover no-repeat;
+        }
+        .slide3 {
+            background: url(/app/images/home-bg-3.jpg) center center/cover no-repeat;
+        }
+        .slide4 {
+            background: url(/app/images/home-bg-4.jpg) top center/cover no-repeat;
+        }
+
+        @keyframes slideScale {
+            0% {
+                opacity: 0;
+                transform: scale(.5);
+            }
+        }
+
+        .slider__nav {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+
+            &-link {
+                display: inline-block;
+                height: 3rem;
+                width: 3rem;
+                background-color: $white;
+                opacity: .7;
+                margin: 0 .7rem;
+                border-radius: 50%;
+                cursor: pointer;
+                
+                &.active-link {
+                    background-color: $red;
+                    border: 1px solid $white;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}
+
