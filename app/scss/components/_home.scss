@@ -96,6 +96,11 @@
                 margin: 0 .7rem;
                 border-radius: 50%;
                 cursor: pointer;
+
+                @include mixins.breakpoint-down(medium) {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
                 
                 &.active-link {
                     background-color: $red;

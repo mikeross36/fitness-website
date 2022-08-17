@@ -54,7 +54,7 @@
             position: relative;
             overflow: hidden;
             height: 25rem;
-            width: 40rem;
+            max-width: 40rem;
             margin: 0 auto;
             border-radius: .5rem;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -83,6 +83,10 @@
                 font-size: $fontSlg;
                 line-height: 150%;
                 margin-bottom: 3%;
+
+                @include mixins.breakpoint-down(medium) {
+                    font-size: 1.3rem;
+                }
             }
 
             .user {
@@ -102,13 +106,15 @@
                 }
 
                 & span {
+                    display: block;
                     color: $red;
                     font-size: $fontSlg;
+                    margin-bottom: 0;
                 }
 
                 .quote__icon {
                     margin-left: auto;
-                    margin: -5% 1% 5% 5%;
+                    margin: 0 5% auto 5%;
                 }
             }
         }

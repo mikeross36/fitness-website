@@ -12,7 +12,7 @@
 
     &__container {
         @include mixins.grid(32rem);
-        justify-items: center;
+        justify-content: center;    
         gap: 0;
         
         &:hover .offers__box-img {
@@ -25,9 +25,10 @@
             align-items: center;
             justify-content: center;
             row-gap: 1rem;
+            
 
             @include mixins.breakpoint-down(medium){
-                margin-bottom: 1rem;
+                margin-bottom: $mb-2;
             }
 
             &:nth-child(even) {
