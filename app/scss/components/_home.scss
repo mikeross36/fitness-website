@@ -87,6 +87,10 @@
             transform: translateX(-50%);
             text-align: center;
 
+            @include mixins.breakpoint-down(medium) {
+                bottom: 10%;
+            }
+
             &-link {
                 display: inline-block;
                 height: 3rem;
