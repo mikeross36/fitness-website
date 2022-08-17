@@ -2,6 +2,9 @@
 @use "../variables" as *;
 
 .trainers {
+    @include mixins.breakpoint-down(large){
+        padding-top: 5rem;
+    }
 
     &__container {
         @include mixins.grid(23rem);
@@ -21,7 +24,7 @@
             }
 
             .trainers__img {
-                height: fit-content;
+                height: 100%;
                 width: 100%;
                 object-fit: cover;
                 top: 0;
@@ -38,16 +41,15 @@
                 transform: translateY(6.5rem);
                 text-transform: capitalize;
 
-                @media screen and (max-width: 768px){
+                @include mixins.breakpoint-down(medium){
                     transform: translateY(6.7rem);
                 }
 
                 & span {
-                    font-size: 1.5rem;
+                    font-size: $fontSlg;
                 }
 
                 .trainers__name {
-                    font-size: 2rem;
                     padding-top: .5rem;
                 }
 
@@ -61,8 +63,5 @@
                 }
             }
         }
-
-        
     }
-    
 }

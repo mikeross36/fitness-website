@@ -1,0 +1,87 @@
+@use "../mixins";
+@use "../variables" as *;
+
+.offers {
+    .heading {
+        padding-top: 2rem;
+
+        @include mixins.breakpoint-down(large){
+            padding-top: 4rem;
+        }
+    }
+
+    &__container {
+        @include mixins.grid(32rem);
+        justify-items: center;
+        gap: 0;
+        
+        &:hover .offers__box-img {
+            transform: scale(1.1);
+        }
+
+        .offers__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 1rem;
+
+            @include mixins.breakpoint-down(medium){
+                margin-bottom: 1rem;
+            }
+
+            &:nth-child(even) {
+                display: flex;
+                flex-flow: column-reverse;
+    
+                @include mixins.breakpoint-down(medium){
+                    flex-flow: column;
+                }
+            }
+
+            &-image {
+                height: 27rem;
+                overflow: hidden;
+
+                .offers__box-img {
+                    height: 25rem;
+                    object-fit: cover;
+                    transition: .3s;
+                }
+            }
+
+            .offers__box-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 2rem 3rem 2rem;
+                text-align: center;
+
+                @include mixins.breakpoint-down(medium){
+                    padding-bottom: 2rem !important;
+                }
+
+                .box__icon {
+                    height: 5rem;
+                    margin-bottom: $mb-2;
+                }
+
+                .box__title {
+                    color: $red;
+                    text-transform: uppercase;
+                }
+
+                .box__description {
+                    line-height: 150%;
+                    font-size: $fontSlg;
+                    color: $light-white;
+                    padding: 1rem 0;
+
+                    @include mixins.breakpoint-down(medium) {
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}

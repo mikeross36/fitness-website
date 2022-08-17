@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp --development",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "cssnano": "^5.1.13",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -17,8 +21,11 @@
     "gulp-file-include": "^2.3.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-inject-svg": "^0.1.18",
+    "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.16",
     "sass": "^1.54.0"
   }
 }

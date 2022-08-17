@@ -2,8 +2,15 @@
 @use "../mixins";
 
 .blogs {
+    .heading {
+        padding-top: 3%;
 
-    .blog__slider {
+        @include mixins.breakpoint-down(large) {
+            padding-top: 4rem;
+        }
+    }
+
+    .blog__container {
         background-color: $light-bg;
         padding: 2rem 7%;
         margin-bottom: 7rem;
@@ -14,34 +21,41 @@
             }
         }
 
-        &-wrapper {
+        .blog__container-wrapper {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
+            gap: 2rem;
+            overflow: hidden;
 
-            @media screen and (max-width: 768px){
+            @include mixins.breakpoint-down(medium){
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .blog__slide {
-                padding: 1rem;
+            .blog__post {
+                padding: 3%;
+                height: fit-content;
                
-                .slide__image {
-                    height: 25rem;
+                .post__image {
+                    max-height: 25rem;
                     overflow: hidden;
         
-                    &__img {
+                    .post__img {
                         object-fit: cover;
+                        transition: .3s;
                     }
                 }
         
-                .blog__slide-content {
+                .post__content {
                     padding: 2rem 0;
+
+                    @include mixins.breakpoint-down(medium){
+                        padding: 1rem 0;
+                    }
         
-                    .blog__link {
+                    .post__link {
                         padding-bottom: 1.5rem;
-                        font-size: 1rem;
+                        font-size: $fontMd;
         
                         & a {
                             color: $red;
@@ -58,14 +72,13 @@
                         }
                     }
         
-                    .blog__title {
-                        font-size: 2rem;
+                    .post__title {
                         color: $white;
                         text-transform: capitalize;
                     }
         
-                    .blog__description {
-                        font-size: 1.5rem;
+                    .post__description {
+                        font-size: $fontSlg;
                         color: $light-white;
                         line-height: 150%;
                         padding: 1rem 0;
@@ -73,7 +86,5 @@
                 }
             }
         }
-
-        
     }
 }

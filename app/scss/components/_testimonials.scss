@@ -1,6 +1,7 @@
 @use "../variables" as *;
+@use "../mixins";
 
-.review {
+.testimonials {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,44 +9,44 @@
     column-gap: 4rem;
     color: $black;
 
-    @media screen and (max-width: 768px){
+    @include mixins.breakpoint-down(medium){
         row-gap: 2rem;
         justify-content: center;
     }
 
     &__info {
         flex: 1 1 20rem;
+        padding: 2rem 0;
 
         & span {
-            font-size: 2rem;
+            font-size: $fontLg;
             font-weight: 700;
             color: $red;
             text-transform: uppercase;
         }
 
-        .review__title {
-            font-size: 3rem;
+        .testimonials__title {
             padding-top: 1rem;
             text-transform: capitalize;
         }
 
-        .review__description {
-            font-size: 1.5rem;
+        .testimonials__description {
+            font-size: $fontSlg;
             line-height: 150%;
             padding: 1rem 0;
         }
     }
 
-    .review__slider {
+    .testimonials__slider {
         flex: 1 1 40rem;
         padding: 2rem;
         position: relative;
 
-        @media screen and (max-width: 991px){
+        @include mixins.breakpoint-down(large){
             padding: 2rem 0 10% 0;
         }
         
-        @media screen and (max-width: 768px){
+        @include mixins.breakpoint-down(medium){
             padding: 2rem 0 15% 0;
         }
 
@@ -79,7 +80,7 @@
             }
 
             &__description {
-                font-size: 1.5rem;
+                font-size: $fontSlg;
                 line-height: 150%;
                 margin-bottom: 3%;
             }
@@ -97,13 +98,12 @@
                 }
 
                 .user__name {
-                    font-size: 2rem;
                     text-transform: capitalize;
                 }
 
                 & span {
                     color: $red;
-                    font-size: 1.5rem;
+                    font-size: $fontSlg;
                 }
 
                 .quote__icon {
@@ -128,7 +128,7 @@
             cursor: pointer;
             filter: drop-shadow(.2rem .2rem .1rem #333);
 
-            @media screen and (max-width: 1040px){
+            @include mixins.breakpoint-down(xlarge){
                 top: 100%
             }
         }
@@ -137,7 +137,7 @@
             left: 0;
             transform: translateY(-50%);
 
-            @media screen and (max-width: 991px){
+            @include mixins.breakpoint-down(large){
                 left: 20%;
             }
         }
@@ -145,7 +145,7 @@
         .next__btn {
             right: 0;
             transform: translateY(-50%);
-            @media screen and (max-width: 991px){
+            @include mixins.breakpoint-down(large){
                 right: 20%;
             }
         }

@@ -1,4 +1,5 @@
-@use "../../scss/variables" as *;
+@use "../variables" as *;
+@use "../mixins";
 
 .header {
     position: fixed;
@@ -12,9 +13,9 @@
     z-index: 1000;
     height: 8vh;
     background: $white;
-    box-shadow: $shadowOne;
+    box-shadow: $boxSh;
 
-    @media screen and (max-width: 768px) {
+    @include mixins.breakpoint-down(large) {
         padding: 0 9%;
         height: 7rem;
     }
@@ -26,6 +27,7 @@
         font-weight: 700;
         color: $red;
         font-size: 4rem;
+        text-shadow: $textSh;
         text-transform: uppercase;
         margin: 1rem 0;
     }
@@ -35,7 +37,7 @@
         display: none;
         margin: 1rem 0;
 
-        @media screen and (max-width: 768px){
+        @include mixins.breakpoint-down(medium){
             display: inline-block;
 
             .burger__btn.active {
@@ -47,7 +49,7 @@
     .navbar {
         display: flex;
 
-        @media screen and (max-width: 768px) {
+        @include mixins.breakpoint-down(medium) {
             display: block;
             position: absolute;
             top: 99%;
@@ -73,14 +75,14 @@
                 color: $red;
             }
 
-            @media screen and (max-width: 991px) {
+            @include mixins.breakpoint-down(large) {
                 padding: 1.5rem 0 1.5rem 2rem;
             }
 
-            @media screen and (max-width: 768px) {
+            @include mixins.breakpoint-down(medium) {
                 display: block;
-                font-size: 2rem;
-                color: white;
+                font-size: $fontLg;
+                color: $white;
                 margin: 2rem 0 2rem 6%;
             }
         }

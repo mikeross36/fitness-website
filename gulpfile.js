@@ -1,13 +1,15 @@
 const { src, dest, watch, series, parallel } = require("gulp")
 
 const sass = require("gulp-sass")(require("sass"))
-const autoprefixer = require("gulp-autoprefixer")
-const cleancss = require("gulp-clean-css")
+const autoprefixer = require("autoprefixer")
+const cssnano = require("cssnano")
+const postcss = require("gulp-postcss")
 const terser = require("gulp-terser")
 const concat = require("gulp-concat")
 const imagemin = require("gulp-imagemin")
 const fileinclude = require("gulp-file-include")
 const embedsvg = require("gulp-embed-svg")
+const sourcemaps = require("gulp-sourcemaps")
 
 files = {
     scssPath: "app/scss/**/*.scss",
@@ -17,17 +19,20 @@ files = {
 
 function scssTask() {
     return src(files.scssPath)
-    .pipe(sass())
-    .pipe(autoprefixer("last 2 versions"))
-    .pipe(cleancss())
-    .pipe(dest("dist/css"))
+    .pipe(sourcemaps.init())
+    .pipe(sass().on("error", sass.logError))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write())
+    .pipe(dest("dist/css/"))
 }
 
 function jsTask() {
     return src(files.jsPath)
+    .pipe(sourcemaps.init())
     .pipe(concat("all.js"))
     .pipe(terser())
-    .pipe(dest("dist/js"))
+    .pipe(sourcemaps.write())
+    .pipe(dest("dist/js/"))
 }
 
 function imageminTask() {
@@ -54,6 +59,7 @@ function watchTask() {
     watch([files.scssPath, files.jsPath], parallel(scssTask, jsTask))
     watch(files.imgPath, imageminTask)
     watch("*/.html", htmlTask)
+    watch("*/.html", embedSvgTask)
 }
 
 exports.default = series(
@@ -62,4 +68,11 @@ exports.default = series(
     htmlTask,
     embedSvgTask,
     watchTask
+)
+
+exports.build = series(
+    parallel(scssTask, jsTask),
+    imageminTask,
+    htmlTask,
+    embedSvgTask,
 )
