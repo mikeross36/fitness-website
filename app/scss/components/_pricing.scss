@@ -54,7 +54,7 @@
 
     .plan {
         text-align: center;
-        padding: 1rem 2rem 3rem 3rem;
+        padding: 1rem 3rem;
         box-shadow: $boxSh;
         background-color: $light-bg;
 
@@ -76,8 +76,12 @@
             }
         }
 
-        &-includes {
-            padding: 2rem 0;
+        &__includes {
+            padding: 1rem 0 2rem 0;
+
+            & a {
+                margin-bottom: $mb-2;
+            }
         }
 
         .pricing__info-plan {
@@ -87,7 +91,6 @@
             padding: .1rem 0;
             margin-bottom: $mb-1;
             line-height: 150%;
-            // padding: 1rem 0;
             font-size: $fontSlg;
             color: $white;
         }

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "fbbd0119-11f2-4e2b-9295-f31a94d21b6e",
+        "url": "#home",
+        "title": "home"
+    },
+    {
+        "id": "e07d53e9-e50b-4af5-8866-1eb585ea9db5",
+        "url": "#about",
+        "title": "about"
+    },
+    {
+        "id": "36087066-cbfd-4262-ac8c-5678dbd654f5",
+        "url": "#offers",
+        "title": "offers"
+    },
+    {
+        "id": "ca737651-4f14-426a-a12e-ecdc933705d5",
+        "url": "#pricing",
+        "title": "pricing"
+    },
+    {
+        "id": "fbbd0119-11f2-4e2b-9295-f31a94d21b6e",
+        "url": "#trainers",
+        "title": "trainers"
+    },
+    {
+        "id": "842fde5d-5373-4bfe-8527-5cbab29dbfcd",
+        "url": "#blogs",
+        "title": "blogs"
+    }
+]

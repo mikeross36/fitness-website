@@ -75,15 +75,16 @@
                 color: $red;
             }
 
-            @include mixins.breakpoint-down(large) {
-                padding: 1.5rem 0 1.5rem 2rem;
-            }
-
             @include mixins.breakpoint-down(medium) {
                 display: block;
                 font-size: $fontLg;
                 color: $white;
                 margin: 2rem 0 2rem 6%;
+            }
+
+            @include mixins.breakpoint-down(large) {
+                padding: 1.5rem 0 1.5rem 2rem;
+                // margin: 0 auto;
             }
         }
     }

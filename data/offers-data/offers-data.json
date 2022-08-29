@@ -1,0 +1,23 @@
+[
+    {
+        "id": "040c4d42-532e-477b-8569-8c087c8c1e99",
+        "image": "./app/images/f-img-1.jpg",
+        "icon": "./app/images/dumbell-gym.svg",
+        "title": "body building",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, atque."
+    },
+    {
+        "id": "db520a20-d480-4dcc-a301-3fe94f13bd82",
+        "image": "./app/images/f-img-2.jpg",
+        "icon": "./app/images/gym-man.svg",
+        "title": "gym for men",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, atque."
+    },
+    {
+        "id": "e893b194-0942-46ef-8d5c-0e0f6f36aecc",
+        "image": "./app/images/f-img-3.jpg",
+        "icon": "./app/images/gym-woman.svg",
+        "title": "gym for women",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, atque."
+    }
+]

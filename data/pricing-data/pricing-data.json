@@ -1,0 +1,27 @@
+[
+    {
+        "id": "89f97931-fd96-4793-b70f-1f488bfc3b33",
+        "icon": "./app/images/check-icon.svg",
+        "title": "personal training"
+    },
+    {
+        "id": "89f97931-fd96-4793-b70f-1f488bfc3b33",
+        "icon": "./app/images/check-icon.svg",
+        "title": "cardio exercise"
+    },
+    {
+        "id": "89f97931-fd96-4793-b70f-1f488bfc3b33",
+        "icon": "./app/images/check-icon.svg",
+        "title": "weight lifting"
+    },
+    {
+        "id": "89f97931-fd96-4793-b70f-1f488bfc3b33",
+        "icon": "./app/images/check-icon.svg",
+        "title": "diet plans"
+    },
+    {
+        "id": "89f97931-fd96-4793-b70f-1f488bfc3b33",
+        "icon": "./app/images/check-icon.svg",
+        "title": "overall results"
+    }
+]
