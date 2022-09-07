@@ -1,0 +1,34 @@
+[
+    {
+        "id": "0980f078-43a6-4dd1-92b5-a42bca130cfe",
+        "description":  "Gym changed my life. Not only physically, but mentally as well. I am a better mother, better spouse and an all around better human being because of this gym.",
+        "image": "./app/images/pic-1.jpg",
+        "name": "jane doe",
+        "title": "fontend developer",
+        "quoteIcon": "./app/images/double-quotes.svg"
+    },
+    {
+        "id": "0fb7ec8a-3d81-456c-8575-cd246e2378a0",
+        "description":  "Gym changed my life. Not only physically, but mentally as well. I am a better mother, better spouse and an all around better human being because of this gym.",
+        "image": "./app/images/pic-2.jpg",
+        "name": "john doe",
+        "title": "fontend developer",
+        "quoteIcon": "./app/images/double-quotes.svg"
+    },
+    {
+        "id": "df514e27-14e1-4848-8359-fde6c494d439",
+        "description":  "Gym changed my life. Not only physically, but mentally as well. I am a better mother, better spouse and an all around better human being because of this gym.",
+        "image": "./app/images/pic-3.jpg",
+        "name": "jane doe",
+        "title": "fontend developer",
+        "quoteIcon": "./app/images/double-quotes.svg"
+    },
+    {
+        "id": "d40f8f94-65c5-4796-9eaa-7f017cd6d7ef",
+        "description":  "Gym changed my life. Not only physically, but mentally as well. I am a better mother, better spouse and an all around better human being because of this gym.",
+        "image": "./app/images/pic-4.jpg",
+        "name": "john doe",
+        "title": "fontend developer",
+        "quoteIcon": "./app/images/double-quotes.svg"
+    }
+]
