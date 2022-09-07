@@ -20,7 +20,7 @@ function homeSlider() {
     const slideLinks = [...document.querySelectorAll(".slider__nav-link")]
     let currentSlide = 0
 
-    const changeSlide = (newSlide) => {
+    function changeSlide(newSlide) {
         if (newSlide >= slides.length) {
             newSlide = 0
         }
@@ -28,12 +28,16 @@ function homeSlider() {
             newSlide = slides.length - 1
         }
 
+        toggleActive(newSlide)
+
+        currentSlide = newSlide
+    }
+
+    function toggleActive(newSlide) {
         slides[currentSlide].classList.toggle("active-slide")
         slideLinks[currentSlide].classList.toggle("active-link")
         slides[newSlide].classList.toggle("active-slide")
         slideLinks[newSlide].classList.toggle("active-link")
-
-        currentSlide = newSlide
     }
 
     slideLinks.forEach((link, linkIdx) => {
@@ -45,30 +49,8 @@ function homeSlider() {
     })
 };
 
-function testimonialSlider() {
-    const revSlides = [...document.querySelectorAll(".slide")]
-    const prevBtn = document.querySelector(".prev__btn")
-    const nextBtn = document.querySelector(".next__btn")
-    let index = 0
-
-    const prevSlide = () => {
-        revSlides[index].classList.remove("active-slide")
-        index = (index - 1 + revSlides.length) % revSlides.length
-        revSlides[index].classList.add("active-slide")
-    }
-
-    const nextSlide = () => {
-        revSlides[index].classList.remove("active-slide")
-        index = (index + 1) % revSlides.length
-        revSlides[index].classList.add("active-slide")
-    }
-
-    prevBtn.addEventListener("click", prevSlide)
-    nextBtn.addEventListener("click", nextSlide)
-};
 
 (function () {
-    testimonialSlider()
     homeSlider()
     navbarCtrl()
 })();
